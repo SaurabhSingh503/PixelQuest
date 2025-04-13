@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#2D2D2D" />
+  <meta name="description" content="PixelQuest - A retro-style platform with pixel art and collectibles" />
+  <link rel="manifest" href="/manifest.json" />
+  <title>PixelQuest - Retro Pixel Adventure</title>
+  <style>
+    @font-face {
+      font-family: 'PressStart2P';
+      src: url('/src/assets/fonts/PressStart2P-Regular.ttf') format('truetype');
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      image-rendering: pixelated;
+      font-family: 'PressStart2P', monospace;
+      overflow-x: hidden;
+    }
+    #root {
+      height: 100vh;
+      width: 100vw;
+    }
+    .loading-screen {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      background-color: #121212;
+      color: #00FF66;
+      font-family: 'PressStart2P', monospace;
+      font-size: 24px;
+    }
+    .loading-pixel {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 5px;
+      background-color: #00FF66;
+      animation: pulse 1.5s infinite ease-in-out;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.5); opacity: 0.7; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div class="loading-screen">
+      <div>
+        LOADING
+        <div style="display: inline-block;">
+          <span class="loading-pixel" style="animation-delay: 0s;"></span>
+          <span class="loading-pixel" style="animation-delay: 0.2s;"></span>
+          <span class="loading-pixel" style="animation-delay: 0.4s;"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/src/index.jsx"></script>
+</body>
+</html>
